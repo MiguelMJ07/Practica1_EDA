@@ -201,7 +201,7 @@ vector<Resultado> correrBenchmarks(vector<string>& original) {
 int main(int argc, char* argv[]) {
     string ruta = argc > 1 ? argv[1] : "dataset.txt";
 
-    cout << "\n--- ST0245 Practica I: Sorting Large Dataset ---\n\n";
+    cout << "\n--- ST0245 Practica I: Ordenamiento de Dataset ---\n\n";
 
     vector<string> dataset = cargarDataset(ruta);
     cout << "Dataset cargado: " << dataset.size() << " palabras\n\n";
