@@ -237,21 +237,24 @@ int main(int argc, char* argv[]) {
 
     cout << "\n--- Analisis comparativo ---\n";
     cout <<
-        "QuickSort: el mas rapido en promedio por mejor localidad de cache.\n"
-        "  Con pivote mediana-de-tres se evita el peor caso O(n^2) en datos ordenados.\n"
-        "  Desventaja: no garantiza O(n log n) en el peor caso absoluto.\n\n"
-
-        "HeapSort: O(n log n) garantizado siempre, sin importar el orden inicial.\n"
-        "  In-place: usa O(1) memoria extra. Mas lento que QuickSort en la practica\n"
-        "  porque los accesos al heap saltan posiciones (malos cache misses).\n\n"
-
-        "AVL Tree: tambien O(n log n) garantizado. Altura maxima = 1.44*log2(n).\n"
-        "  Usa mas memoria que los otros (~56 bytes/nodo vs ~32 bytes/string en vector).\n"
-        "  Su ventaja real es mantener el orden con inserciones/busquedas dinamicas.\n\n"
-
-        "Conclusion: QuickSort es la mejor opcion para ordenar en memoria una sola vez.\n"
-        "HeapSort si la memoria es critica. AVL si el dataset cambia continuamente.\n";
-
+        "QuickSort fue el mas rapido de los tres. Usa el pivote mediana-de-tres\n"
+        "para evitar el peor caso O(n^2), y accede a memoria de forma continua\n"
+        "lo que lo hace muy eficiente en la practica.\n\n"
+        
+        "HeapSort garantiza O(n log n) en cualquier escenario y no necesita\n"
+        "memoria extra (O(1) in-place). Su desventaja es que accede al heap\n"
+        "saltando posiciones, lo que genera mas fallos de cache y lo hace\n"
+        "mas lento que QuickSort aunque tengan la misma complejidad teorica.\n\n"
+        
+        "AVL Tree tambien garantiza O(n log n) y mantiene el arbol balanceado\n"
+        "con una altura maxima de 1.44*log2(n). Usa mas memoria por sus punteros\n"
+        "pero es la mejor opcion cuando el dataset cambia frecuentemente, ya que\n"
+        "permite busquedas e inserciones eficientes despues del ordenamiento.\n\n"
+        
+        "Conclusion: para ordenar una coleccion grande una sola vez, QuickSort\n"
+        "es la mejor opcion. HeapSort si la memoria es limitada. AVL Tree si\n"
+        "se necesitan operaciones dinamicas sobre los datos despues de ordenar.\n";
+        
     cout << "\nListo.\n\n";
     return 0;
 }
