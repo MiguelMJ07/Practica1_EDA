@@ -1,4 +1,4 @@
-# ST0245 - Práctica I: Sorting Large Dataset
+# ST0245 - Práctica I: Ordenamiento de Dataset
 
 **Curso:** Estructuras de Datos y Algoritmos  
 **Universidad:** EAFIT  
